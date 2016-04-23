@@ -1,3 +1,4 @@
+//Add Variables
 var button = document.getElementById("submitButton");
 button.addEventListener("click", handler);
 
@@ -12,7 +13,6 @@ charInput.addEventListener("keyup", handler);
 //Checks if both values are present - Places values into Object
 function handler(event) {
 	event.preventDefault();
-	// console.log("test", event);
 	if (event.keyCode === 13 || event.type === "click") {
 
 		if (numInput.value === "" || charInput.value === "") {
@@ -20,10 +20,6 @@ function handler(event) {
 		} else {
 			var number = numInput.value;
 			var character = charInput.value;
-			// if (number !== undefined && character !== undefined) {
-			// console.log("entered number", number );
-			// console.log("entered character", character );
-
 			var treePlans = {
 				rows: number,
 				character: character
@@ -41,10 +37,10 @@ function buildTree(treePlans) {
 		var spaces = " ";
 		var tree = "";
 		if (treePlans.rows -1 > i) {
-			tree += spaces.repeat(number-=1) + treePlans.character.repeat(i *2 + 1); //first
+			tree += spaces.repeat(number-=1) + treePlans.character.repeat(i *2 + 1);
 			console.log(tree);
 		} else {
-			console.log(tree + treePlans.character.repeat(i *2 +1)); //was 6 chars so did *2 + 1
+			console.log(tree + treePlans.character.repeat(i *2 +1));
 		}
 	}
 }
